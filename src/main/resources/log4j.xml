@@ -4,7 +4,7 @@
 
 
     <!-- Appenders -->
-    <appender name="console" class="file.combiner.logging.ANSIConsoleAppender$$$">
+    <appender name="console" class="file.combiner.logging.ANSIConsoleAppender">
         <param name="Target" value="System.out"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{yy/MM/dd HH:mm:ss.SSS} %-5p %c{1}: %m%n" />
