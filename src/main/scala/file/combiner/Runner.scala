@@ -10,11 +10,14 @@ import file.combiner.utils.Loggable
 /**
 *
 */
-object Runner extends Loggable {
+object Runner {
 
-  /** */
+  /**
+    *
+    */
   def main(args: Array[String]): Unit = {
-   
+
+    /*
     val propertyPath = if(args.isEmpty) "src/main/resources/init.properties" else args(0)
     
     val config = ConfigFactory.parseFile(new File(propertyPath))
@@ -30,8 +33,7 @@ object Runner extends Loggable {
     implicit val sc: SparkContext = new SparkContext(sparkConf)
     implicit val sq: SQLContext = new SQAContext(sc)
     
-    
-    
+    */
   }
   
 }
