@@ -1,13 +1,15 @@
-name := "dqa_summary_generator"
+name := "file_combinerr"
 
 version := "1.0"
 
-scalaVersion := "2.10.5"
+scalaVersion := "2.12.1"
 
-val sparkVersion = "1.6.3"
+// artifacts versions
+val sparkVersion = "2.4.4"
 val apachePoiVersion = "3.15-beta2"
 
 
+// libraries
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion,
   "org.apache.spark" %% "spark-sql" % sparkVersion,

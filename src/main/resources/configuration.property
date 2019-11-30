@@ -1,0 +1,9 @@
+# this config file includes important parameter; change the values if it's required
+
+# paths
+workspacePath = /home/aniatomek/Projects/ScalaFileCombiner
+inputPath = src/main/resources/data
+outputPath = src/main/resources/generated
+
+# a list of department to process data combining
+orgUnitsToProcess = FIN,HR
