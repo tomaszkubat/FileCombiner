@@ -1,0 +1,8 @@
+package file.combiner.utils
+
+import org.apache.log4j.{ConsoleAppender, Level, Priority}
+import org.apache.log4j.spi.LoggingEvent
+
+object ANSIConsole (
+  private val NORMAL = 0
+)
