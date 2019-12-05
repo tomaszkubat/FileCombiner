@@ -14,7 +14,7 @@
     <!-- Loggers -->
     <!-- To changee log level change this value -->
     <logger name="file.combiner">
-        <level value="INFO" />
+        <level value="WARN" />
     </logger>
 
     <!-- Root Logger -->
