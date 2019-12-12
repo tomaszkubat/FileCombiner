@@ -14,8 +14,8 @@ import com.typesafe.config.ConfigFactory
 class ConfigLoader(propertyPathString: String) {
 
 
-  private var configFile = new File(propertyPathString)
-  private var config = ConfigFactory.parseFile(configFile)
+  private val configFile = new File(propertyPathString)
+  private val config = ConfigFactory.parseFile(configFile)
 
 
   /** "dqa.properties" file based parameters */
