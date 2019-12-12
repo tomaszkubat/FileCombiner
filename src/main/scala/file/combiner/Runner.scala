@@ -33,6 +33,9 @@ object Runner extends Logger {
     val sq: SQLContext = new SQLContext(sc)
 
 
+
+
+
     warn(s"Application finished")
 
   }
