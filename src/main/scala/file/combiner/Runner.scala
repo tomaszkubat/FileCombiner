@@ -2,9 +2,9 @@ package file.combiner
 
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
-import java.io.File
 import file.combiner.logging.Logger
 import file.combiner.utils.ConfigLoader
+
 
 
 /**

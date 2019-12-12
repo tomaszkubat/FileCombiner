@@ -7,9 +7,9 @@ package file.combiner.files
   * @author tomaszk
   * @since 2019.09.18
   */
-abstract class File(val file: java.io.File, val orgUnit: String) {
+abstract class File(val iFile: java.io.File) {
 
-  val fileName: String = file.getName() // get file name as String
+  val fileName: String = iFile.getName() // get file name as String
   override def toString(): String = fileName // override toString method to show file name
 
 }
