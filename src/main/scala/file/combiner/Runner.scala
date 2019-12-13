@@ -6,10 +6,9 @@ import file.combiner.logging.Logger
 import file.combiner.utils.ConfigLoader
 
 
-
 /**
-* @author tomasz.kubat
-*/
+  * @author tomasz.kubat
+  */
 object Runner extends Logger {
 
   /**
@@ -34,9 +33,7 @@ object Runner extends Logger {
     /** combine data for each org unit */
       config
         .orgUnits.sorted
-        .foreach(orgUnit => {
-          new SummaryRunner(sq, orgUnit, config)
-        })
+        .foreach(orgUnit => new SummaryRunner(sq, orgUnit, config))
 
     warn(s"Application finished")
 
