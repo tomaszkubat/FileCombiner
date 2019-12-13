@@ -20,7 +20,7 @@ object Runner extends Logger {
     warn(s"Starting application")
 
     /** load configuration */
-      val propertyPath = if(!args.isEmpty) args(0) else "src/main/resources/configuration.properties"
+      val propertyPath = if(!args.isEmpty) args(0) else "src/main/resources/configuration.property"
       val config = new ConfigLoader(propertyPath)
 
 

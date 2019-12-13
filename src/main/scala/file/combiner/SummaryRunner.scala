@@ -1,7 +1,7 @@
 package file.combiner
 
 import java.io.{File => jFile} // rename File to jFile
-import org.apache.spark.sql.{SQLContext,DataFrame}
+import org.apache.spark.sql.{SQLContext,Row}
 import file.combiner.utils.{ConfigLoader,DirChecker}
 import file.combiner.logging.Logger
 import file.combiner.files._
@@ -32,15 +32,30 @@ class SummaryRunner(sqlContext: SQLContext, orgUnit: String, config: ConfigLoade
 
   /** generating summary */
 
-    info(s"Start processing ${orgUnit}")
+    info(s"Processing ${orgUnit}")
 
-    setsTypes.foreach(setType =>
+    // use XlsContext logic to create a new xls file and ensure writting to the xls file
+    val xlsContext = new XlsContext(outDir) // create XlsContext instance to perform xls stuff
+    val xls = xlsContext.createXlsFile(orgUnit, orgUnit) // create XlsFile instance
+    val wb = xls.openWorkbook() // open workbook (create workbook variable)
 
-      info(s"Start processing ${orgUnit} data set ${setType}")
+    // create initial sheet
+    xls.writeToSheet(wb, "Files_overview", Array(Row("Set_name", "File_name", "rows", "cols")))
 
 
-    )
+    // proceed for each set type
+    inputFiles
+      .filter(!_.fileContent.isEmpty) // get only nonempty files
+      .foreach(inpFile => {
 
+        info(s"Processing ${orgUnit} file ${inpFile.fileName}")
+
+        xls.writeToSheet(wb, inpFile.setName, inpFile.fileContent)
+        xls.writeToSheet(wb, "Files_overview", Array(Row(inpFile.setName, inpFile.fileName, inpFile.fileContentRowNum, inpFile.fileContentColNum)))
+
+    })
+
+    xls.closeWorkbook(wb)
 
 
 }

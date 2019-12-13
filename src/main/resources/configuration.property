@@ -6,4 +6,4 @@ inputPath = src/main/resources/data
 outputPath = src/main/resources/generated
 
 # a list of department to process data combining
-orgUnitsToProcess = FIN,HR
+orgUnitsToProcess = "FIN,HR"

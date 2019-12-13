@@ -23,9 +23,9 @@ class XlsContext(summaryDir: java.io.File) extends Logger {
 
   /**
     * Method to construct an XlsFile instance
-    * @param xlsFileName - xls file name (without extension)
-    * @param orgUnit      - org Unit
-    * @return
+    * @param xlsFileName xls file name (without extension)
+    * @param orgUnit org Unit
+    * @author tomasz.kubat
     */
   def createXlsFile(xlsFileName: String, orgUnit: String): XlsFile = {
 
@@ -45,7 +45,8 @@ class XlsContext(summaryDir: java.io.File) extends Logger {
     * Apache POI tutorial: https://poi.apache.org/components/poi-jvm-languages.html
     * @param orgUnit - DqaFile to write to xls
     */
-  class XlsFile(file: java.io.File, orgUnit: String) extends com.baesystems.ai.sna.dqa.files.File(file: java.io.File, orgUnit: String) {
+  class XlsFile(file: java.io.File, orgUnit: String)
+    extends File (file: java.io.File) {
 
 
     /**
@@ -146,8 +147,8 @@ class XlsContext(summaryDir: java.io.File) extends Logger {
 
         /**
           * Active new row in a given sheet
-          * @param sheet - sheet
-          * @return - usermodel.Row
+          * @param sheet sheet
+          * @return usermodel.Row
           */
         def activateNextRow(sheet: Sheet): usermodel.Row = {
           val lr = sheet.getPhysicalNumberOfRows() // find last row
